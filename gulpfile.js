@@ -42,7 +42,7 @@ const path = {
         html:   srcPath + "**/*.html",
         js:     srcPath + "assets/js/**/*.js",
         css:    srcPath + "assets/scss/**/*.scss",
-        images: srcPath + "assets/img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
+        images: srcPath + "assets/img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json,mp4}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     clean: "./" + distPath
@@ -143,7 +143,7 @@ function images() {
 
 function webpImages() {
     return src(path.src.images, {base: srcPath + "assets/img/"})
-        .pipe(imagewebp())
+        // .pipe(imagewebp())
         .pipe(dest(path.build.images))
 }
 
