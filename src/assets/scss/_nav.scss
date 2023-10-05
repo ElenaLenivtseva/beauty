@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+    align-items: center;
+    &__item {
+        transition: 0.5s easy-in;
+        -webkit-transition: 0.5s easy-in;
+        -moz-transition: 0.5s easy-in;
+        -ms-transition: 0.5s easy-in;
+        -o-transition: 0.5s easy-in;
+        &:not(:last-child) {
+            margin-right: 2.3em;
+        }
+    }
+    &__link {
+        &:hover {
+            cursor: url('/assets/img/default/cursor.png'), pointer;
+            color: $green;
+        }
+    }
+}
