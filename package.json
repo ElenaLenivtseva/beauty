@@ -2,7 +2,6 @@
     "name": "gulp-site",
     "version": "1.0.0",
     "description": "new gulp website",
-    "author": "Coder Folder",
     "devDependencies": {
         "browser-sync": "^2.27.10",
         "del": "^6.0.0",

@@ -13,7 +13,7 @@
     }
     &__link {
         &:hover {
-            cursor: url('/assets/img/default/cursor.png'), pointer;
+            cursor: pointer;
             color: $green;
         }
     }
