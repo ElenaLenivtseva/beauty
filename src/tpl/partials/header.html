@@ -1,14 +1,37 @@
 <header class="header">
+    <ul class="nav nav_mobile">
+        <li class="nav__item">
+            <a class="nav__link" href="#">Услуги и цены</a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="#">Мастера</a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="#">Наши работы</a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="#about">О нас</a>
+        </li>
+        <li class="nav__item">
+            <a class="nav__link" href="#">Контакты</a>
+        </li>
+    </ul>
     <div class="container container_vertical header__container">
         <div class="header__top">
-            <p class="header__logo">
-                Мир красоты
-            </p>
+            <div class="header__top-left">
+                <div class="menu">
+                    <img class="menu__img" src="./assets/img/default/menu.png" alt="">
+                </div>
+                <p class="header__logo">
+                    Мир красоты
+                </p>
+            </div>
+            
             <div class="header__nav">
                 {{> nav}}
             </div>
             <div class="header__contact">
-                <p class="header__phone">8 (499) 686-17-62</p>
+                <a class="header__phone" href="tel:+84996861762">8 (499) 686-17-62</a>
                 <p class="header__schedule">с 10.00 до 19.00 без выходных</p>
             </div>
         </div>
@@ -23,9 +46,9 @@
                 <img class="header-img" src="./assets/img/header/header__img.png" alt="">
             </div>
             <div class="header__network">
-                <img class="header__network-img" src="./assets/img/networks/vk.png" alt="#">
-                <img class="header__network-img" src="./assets/img/networks/inst.png" alt="#">
-                <img class="header__network-img" src="./assets/img/networks/youtube.png" alt="#">
+                <img class="header__network-img" src="./assets/img/networks/vk.png" alt="vk">
+                <img class="header__network-img" src="./assets/img/networks/inst.png" alt="inst">
+                <img class="header__network-img" src="./assets/img/networks/youtube.png" alt="yotube">
             </div>
         </div>
     </div>

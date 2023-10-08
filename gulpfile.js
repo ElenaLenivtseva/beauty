@@ -18,6 +18,7 @@ const notify = require("gulp-notify")
 const imagewebp = require("gulp-webp")
 const browserSync = require("browser-sync").create();
 
+
 /* Paths */
 const srcPath = "src/"
 const distPath = "dist/"
@@ -36,13 +37,13 @@ const path = {
         css: srcPath + "assets/scss/*.scss",
         js: srcPath + "assets/js/*.js",
         images: srcPath + "assets/img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg,otf}"
+        fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     watch: {
         html:   srcPath + "**/*.html",
         js:     srcPath + "assets/js/**/*.js",
         css:    srcPath + "assets/scss/**/*.scss",
-        images: srcPath + "assets/img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json,mp4}",
+        images: srcPath + "assets/img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts:  srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
     clean: "./" + distPath
@@ -52,8 +53,7 @@ function serve() {
     browserSync.init({
         server: {
             baseDir: "./" + distPath
-        },
-        port: 9000
+        }
     });
 }
 
@@ -143,7 +143,7 @@ function images() {
 
 function webpImages() {
     return src(path.src.images, {base: srcPath + "assets/img/"})
-        // .pipe(imagewebp())
+        .pipe(imagewebp())
         .pipe(dest(path.build.images))
 }
 
