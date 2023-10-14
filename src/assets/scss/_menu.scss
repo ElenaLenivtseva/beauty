@@ -1,0 +1,19 @@
+.menu {
+    display: none;
+    @include breakpoint($tablet) {
+        display: block;
+        margin-right: 2rem;
+        position: relative;
+    }
+    &__img {
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        transition: 0.4s linear;
+        -webkit-transition: 0.4s linear;
+        -moz-transition: 0.4s linear;
+        -ms-transition: 0.4s linear;
+        -o-transition: 0.4s linear;
+    }
+}

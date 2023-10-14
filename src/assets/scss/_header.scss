@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     &__container {
         background-image: url('/assets/img/header/bg.png');
     }
@@ -7,10 +8,25 @@
         padding-top: 3rem;
         justify-content: space-between;
         font-size: 1.4rem;
+        @include breakpoint($mobile) {
+            flex-direction: column;
+        }
+    }
+    &__top-left {
+        display: flex;
+        @include breakpoint($tablet) {
+            align-items: center;
+        }
     }
     &__logo {
         font-size: 2.4rem;
         font-weight: 700;
+        @include breakpoint($tablet800) {
+            font-size: 1.9rem;
+        }
+        @include breakpoint($tablet700) {
+            font-size: 1.5rem;
+        }
     }
     &__nav {
         margin-top: 0.6rem;
@@ -20,42 +36,91 @@
         flex-direction: column;
         align-items: end;
         margin-top: 0.9rem;
+        @include breakpoint($mobile) {
+            align-items: start;
+            text-align: center;
+        }
     }
     &__phone {
         font-size: 1.8rem;
         font-weight: 500;
         margin-bottom: 0.8rem;
+        @include breakpoint($bp1100) {
+            font-size: 1.5rem;
+        }
+        @include breakpoint($tablet700) {
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+        }
     }
     &__bottom {
         display: flex;
         align-items: center;
+        @include breakpoint($mobile) {
+            display: grid;
+            grid-template-areas: 
+            "text"
+            "networks"
+            "photo";
+            padding-top: 5rem;
+        }
     }
     &__text {
         width: 46%;
+        @include breakpoint($mobile) {
+            grid-area: text;
+            width: 100%;
+            text-align: center;
+        }
     }
     &__title {
         margin-bottom: 0.3em;
+        @include breakpoint($tablet) {
+            margin-bottom: 0.5em;
+        }
     }
     &__lead {
         margin-bottom: 2.9em;
+        @include breakpoint($bp1100) {
+            margin-bottom: 1.7em;
+        }
+        @include breakpoint($tablet) {
+            margin-bottom: 1.3em;
+        }
+        @include breakpoint($tablet800) {
+            margin-bottom: 1.2em;
+        }
+        @include breakpoint($tablet700) {
+            margin-bottom: 1em;
+        }
     }
     &__wrap-img {
         width: 47.2%;
-        // margin-right: 6.3rem;
         margin-right: 5.6%;
+        @include breakpoint($mobile) {
+            grid-area: photo;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 23rem;
+        }
     }
     &__img {
         max-width: 100%;
         object-fit: cover;
+        @include breakpoint($mobile) {
+            height: auto;
+        }
     }
     &__network {
         display: flex;
         flex-direction: column;
+
         &-img {
-            width: 2.8rem;
+            width: 4.8rem;
             &:hover {
                 opacity: 0.7;
-                cursor: url('/assets/img/default/cursor.png'), pointer;
+                cursor: pointer;
             }
             &:not(:last-child) {
                 margin-bottom: 1.8rem;
@@ -65,6 +130,44 @@
             -moz-transition: 0.5s linear;
             -ms-transition: 0.5s linear;
             -o-transition: 0.5s linear;
-}
+
+            @include breakpoint($bpDefault) {
+                width: 2.8rem;
+            }
+
+            @include breakpoint($mobile) {
+                width: 4rem;
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                    margin-right: 1.2rem;
+                }
+            }
+        }
+        
+        @include breakpoint($mobile) {
+            grid-area: networks;
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    }
+    &__schedule {
+        @include breakpoint($bp1100) {
+            text-align: right;
+            font-size: 1.5rem;
+        }
+        @include breakpoint($tablet800) {
+            font-size: 1.3rem;
+        }
+        @include breakpoint($tablet800) {
+            font-size: 1rem;
+        }       
+    }
+    &__nav {
+        @include breakpoint($tablet) {
+            display: none;
+        }
     }
 }

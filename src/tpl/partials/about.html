@@ -1,6 +1,6 @@
 <section class="about">
     <div class="container">
-        <div class="container--vertical">
+        <div class="container_vertical">
             <a name="about"></a>
             <h2 class="title">О салоне</h2>
             <div class="about__wrap">
@@ -11,37 +11,39 @@
                     
                 </div>
                 <div class="about__right">
-                    <div class="about__video">
-                        <video poster="./assets/img/about/video.png">
-                            <source src="./assets/img/about/about__video.webp" type="video/webp">
-                          </video>
-                        <!-- <img class="about__img" src="./assets/img/about/video.png" alt=""> -->
+                    <div class="about__poster _active">
+                        <img class="about__right-bg" src="./assets/img/about/about__bg.png" alt="постер видео">
+                        <div class="about__above">
+                            <img class="about__icon" src="./assets/img/about/about__play.svg" alt="кнопка проигрывателя">
+                            <p class="about__video-descr">Короткое видео о нас</p>
+                        </div> 
                     </div>
+                    <iframe class="about__video" height="100%" src="https://www.youtube.com/embed/Y_UtFiJTAWI?si=gPa3VcE4exzJaZD3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
         
-        <div class="advantage container--vertical">
+        <div class="advantage container_vertical">
             <div class="advantage-item">
                 <div class="advantage-img-wrap">
-                    <img class="advantage-img" src="./assets/img/about/adv1.svg" alt="">
+                    <img class="advantage-img" src="./assets/img/about/adv1.svg" alt="Кабинеты">
                 </div>
-                <p class="subtitle--item advantage__subtitle1">Удобные кабинеты</p>
-                <p class="additional--big">Комфорт и стиль - принцип создания кабинетов салона красоты. Только эстетика и удобство для Вас</p>
+                <p class="subtitle_item advantage__subtitle-margin">Удобные кабинеты</p>
+                <p class="additional_big">Комфорт и стиль - принцип создания кабинетов салона красоты. Только эстетика и удобство для Вас</p>
             </div>
             <div class="advantage-item">
                 <div class="advantage-img-wrap">
-                    <img class="advantage-img" src="./assets/img/about/adv2.svg" alt="">
+                    <img class="advantage-img" src="./assets/img/about/adv2.svg" alt="Косметика">
                 </div>
-                <p class="subtitle--item">Качественная косметика</p>
-                <p class="additional--big">Используем профессиональные материалы высшего качества лучших брендов</p>
+                <p class="subtitle_item">Качественная косметика</p>
+                <p class="additional_big">Используем профессиональные материалы высшего качества лучших брендов</p>
             </div>
             <div class="advantage-item">
                 <div class="advantage-img-wrap">
-                    <img class="advantage-img" src="./assets/img/about/adv3.svg" alt="">
+                    <img class="advantage-img" src="./assets/img/about/adv3.svg" alt="Мастера">
                 </div>
-                <p class="subtitle--item">Опытные мастера</p>
-                <p class="additional--big">Работают только опытные мастера с чувством стиля. Смотрите наших специалистов в разделе Мастера</p>
+                <p class="subtitle_item">Опытные мастера</p>
+                <p class="additional_big">Работают только опытные мастера с чувством стиля. Смотрите наших специалистов в разделе Мастера</p>
             </div>
         </div>
     </div>

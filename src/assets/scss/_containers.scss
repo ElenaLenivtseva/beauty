@@ -1,11 +1,14 @@
 .container {
     width: 100%;
     padding: 0 11.4%;
+    @include breakpoint($tablet700) {
+        padding: 0 7.4%;
+    }
 }
-.container--footer {
+.container_footer {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
-.container--vertical {
+.container_vertical {
     margin-bottom: 10rem;
 }
