@@ -1,0 +1,80 @@
+.contacts {
+    background: $grey;
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20.7rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        @include breakpoint($tablet) {
+            grid-gap: 4.7rem;
+        }
+        @include breakpoint($mobile) {
+            grid-template-columns: 1fr;
+        }
+        @include breakpoint($small-mobile) {
+            padding-top: 2rem;
+        }
+    }
+    
+    &__left {
+        display: flex;
+        flex-direction: column;
+        padding-top: 3.7rem;
+        @include breakpoint($mobile) {
+            align-items: center;
+        }
+    }
+    &__item {
+        font-size: 1.6rem;
+        &:not(:last-child) {
+            margin-bottom: 0.8em;
+        }
+        @include breakpoint($mobile) {
+            text-align: center;
+        }
+    }
+    &__email {
+        color: $blue;
+        text-decoration: solid;
+    }
+    &__networks {
+        margin-top: 3.2rem;
+    }
+    &__networks-txt {
+        font-size: 1.2rem;
+        margin-bottom: 1em;
+    }
+    &__networks-link {
+        &:not(:last-child) {
+            margin-right: 2.3rem;
+        }
+    }
+    &__networks-img {
+        transition: 0.4s linear;
+        -webkit-transition: 0.4s linear;
+        -moz-transition: 0.4s linear;
+        -ms-transition: 0.4s linear;
+        -o-transition: 0.4s linear;
+        width: 2.8rem;
+        
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        
+}
+    &__right {
+        background: $white;
+        border-radius: 0.8rem;
+        -webkit-border-radius: 0.8rem;
+        -moz-border-radius: 0.8rem;
+        -ms-border-radius: 0.8rem;
+        -o-border-radius: 0.8rem;
+        padding: 4rem 3.5rem;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
+        @include breakpoint($small-mobile) {
+            padding: 2rem 1.5rem;
+        }
+}
+}

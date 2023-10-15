@@ -14,18 +14,33 @@
     @include breakpoint($tablet700) {
         font-size: 1.9rem;
     }
+    @include breakpoint($mobile) {
+        text-align: center;
+    }
 }
 .subtitle {
     font-size: 1.6rem;
+    @include breakpoint($tablet) {
+        font-size: 1.4rem;
+    }
+    @include breakpoint($mobile) {
+        font-size: 1.3rem;
+    }
     &_item {
         font-size: 1.8rem;
         margin-bottom: 0.8rem;
         font-weight: 600;
+        @include breakpoint($mobile) {
+            font-size: 1.3rem;
+        }
     }
 }
 .lead {
     font-size: 2rem;
     font-weight: 400;
+    @include breakpoint($tablet) {
+        font-size: 1.6rem;
+    }
     @include breakpoint($tablet700) {
         font-size: 1.5rem;
     }
@@ -33,9 +48,15 @@
 .additional {
     &_big {
         font-size: 1.4rem;
+        @include breakpoint($mobile) {
+            font-size: 1.2rem;
+        }
     }
     &_small {
         font-size: 1.2rem;
+        @include breakpoint($small-mobile) {
+            font-size: 1rem;
+        }
     }
     
 }

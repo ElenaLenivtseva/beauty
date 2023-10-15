@@ -4,23 +4,44 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-column-gap: 3rem;
         grid-row-gap: 4.8rem;
+        @include breakpoint($tablet) {
+            grid-row-gap: 2.8rem;
+        }
+        @include breakpoint($tablet800) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include breakpoint($mobile) {
+            grid-template-columns: 1fr;
+        }
     }
 }
 .item-serv {
     &__img-wrap {
+        margin-bottom: 2rem;
+        height: 18rem;
+        @include breakpoint($mobile) {
+            height: 16rem;
+        }
+    }
+    &__img {
+        max-width: 100%;
+        object-fit: cover;
+        height: 100%;
         border-radius: 0.8rem;
         -webkit-border-radius: 0.8rem;
         -moz-border-radius: 0.8rem;
         -ms-border-radius: 0.8rem;
         -o-border-radius: 0.8rem;
-        margin-bottom: 2rem;
-        height: 18rem;
-    }
-    &__img {
-        max-width: 100%;
-        object-fit: cover;
     }
     &__info {
         margin-bottom: 1.6rem;
     }
+    @include breakpoint($mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
 }

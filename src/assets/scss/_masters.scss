@@ -2,13 +2,33 @@
     background: $grey;
     padding-top: 10rem;
     padding-bottom: 10rem;
+    @include breakpoint($small-mobile) {
+        padding-top: 5rem;
+    }
     &__wrap {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-column-gap: 3rem;
         grid-row-gap: 4.8rem;
         margin-top: 2.4rem;
+        @include breakpoint($tablet) {
+            grid-column-gap: 2rem;
+        }
+        @include breakpoint($tablet800) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include breakpoint($mobile) {
+            grid-template-columns: 1fr;
+            grid-row-gap: 2.8rem;
+        }
     }
+    &__subtitle {
+        @include breakpoint($mobile) {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+    }
+    
 }
 .item-master {
     &__button {
@@ -19,6 +39,41 @@
             .item-master__link {
                 opacity: 1;
             }
+            .item-master__img-wrap::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba($color: #000000, $alpha: 0.5);
+                border-radius: 0.8rem;
+                -webkit-border-radius: 0.8rem;
+                -moz-border-radius: 0.8rem;
+                -ms-border-radius: 0.8rem;
+                -o-border-radius: 0.8rem;
+            }
+        }
+        @include breakpoint($bp1100) {
+            height: 22rem;
+        }
+        @include breakpoint($tablet) {
+            height: 20rem;
+        }
+        @include breakpoint($tablet800) {
+            height: 27rem;
+            width: 100%;
+        }
+        @include breakpoint($mobile) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 23rem;
+        }
+        @include breakpoint($small-mobile) {
+            height: 18rem;
         }
     }
     &__link {
@@ -37,21 +92,40 @@
     }
     &__img-wrap {
         height: 100%;
+        margin-bottom: 2rem;
+        transition: 0.7s linear;
+        -webkit-transition: 0.7s linear;
+        -moz-transition: 0.7s linear;
+        -ms-transition: 0.7s linear;
+        -o-transition: 0.7s linear;
+}
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
         border-radius: 0.8rem;
         -webkit-border-radius: 0.8rem;
         -moz-border-radius: 0.8rem;
         -ms-border-radius: 0.8rem;
         -o-border-radius: 0.8rem;
-        margin-bottom: 2rem;
-    }
-    &__img {
-        max-width: 100%;
-        object-fit: cover;
+        // @include breakpoint($tablet800) {
+        //     width: 100%;
+        // }
     }
     &__experience {
         margin-top: 2rem;
         text-transform: uppercase;
         font-weight: 300;
+        @include breakpoint($tablet) {
+            margin-top: 1.3rem;
+        }
     }
-
+    &__info {
+        @include breakpoint($tablet) {
+            margin-top: 1.3rem;
+        }
+        @include breakpoint($mobile) {
+            text-align: center;
+        }
+    }
 }

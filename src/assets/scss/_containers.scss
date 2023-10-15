@@ -11,4 +11,10 @@
 }
 .container_vertical {
     margin-bottom: 10rem;
+    @include breakpoint($mobile) {
+        margin-bottom: 8rem;
+    }
+    @include breakpoint($small-mobile) {
+        margin-bottom: 4rem;
+    }
 }

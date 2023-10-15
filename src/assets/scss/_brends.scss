@@ -1,0 +1,14 @@
+.brends {
+    &__subtitle {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    &__wrap {
+        // display: grid;
+        // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.35;
+    }
+}
