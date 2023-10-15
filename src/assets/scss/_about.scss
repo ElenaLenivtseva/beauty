@@ -59,16 +59,16 @@
     &__icon {
         width: 6rem;
         margin-bottom: 0.6rem;
-        &:hover {
-            cursor: pointer;
-            opacity: 0.7;
-        }
         transition: 0.7s linear;
         -webkit-transition: 0.7s linear;
         -moz-transition: 0.7s linear;
         -ms-transition: 0.7s linear;
         -o-transition: 0.7s linear;
-}
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        } 
+    }
     &__video {
         display: none;
         width: 100%;
@@ -99,8 +99,8 @@
             margin-bottom: 0.5em;
         }
     }
-    
 }
+
 .advantage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -131,7 +131,6 @@
         }
         @include breakpoint($small-mobile) {
             padding: 0;
-            
         }
     }
     &-img-wrap {

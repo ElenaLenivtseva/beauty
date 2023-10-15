@@ -1,6 +1,11 @@
 .works {
     margin-bottom: 10rem;
     overflow: hidden;
+    transition: 0.4s linear;
+    -webkit-transition: 0.4s linear;
+    -moz-transition: 0.4s linear;
+    -ms-transition: 0.4s linear;
+    -o-transition: 0.4s linear;
     @include breakpoint($small-mobile) {
         margin-bottom: 8rem;
     }
@@ -41,12 +46,8 @@
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
         }
-        transition: 0.4s linear;
-        -webkit-transition: 0.4s linear;
-        -moz-transition: 0.4s linear;
-        -ms-transition: 0.4s linear;
-        -o-transition: 0.4s linear;
-}
+        
+    }
     &__arrow_next {
         transform: scale(-1, 1);
         -webkit-transform: scale(-1, 1);
@@ -73,7 +74,7 @@
         @include breakpoint($bp1100) {
             height: 25rem;
         }
-}
+    }
     &__item-img {
         max-width: 100%;
         object-fit: cover;

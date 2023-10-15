@@ -115,7 +115,6 @@
     &__network {
         display: flex;
         flex-direction: column;
-
         &-img {
             width: 4.8rem;
             &:hover {
@@ -134,7 +133,6 @@
             @include breakpoint($bpDefault) {
                 width: 2.8rem;
             }
-
             @include breakpoint($mobile) {
                 width: 4rem;
                 &:not(:last-child) {
@@ -143,7 +141,6 @@
                 }
             }
         }
-        
         @include breakpoint($mobile) {
             grid-area: networks;
             width: 100%;

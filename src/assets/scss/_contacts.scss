@@ -16,7 +16,6 @@
             padding-top: 2rem;
         }
     }
-    
     &__left {
         display: flex;
         flex-direction: column;
@@ -57,13 +56,11 @@
         -ms-transition: 0.4s linear;
         -o-transition: 0.4s linear;
         width: 2.8rem;
-        
         &:hover {
             opacity: 0.7;
             cursor: pointer;
         }
-        
-}
+    }
     &__right {
         background: $white;
         border-radius: 0.8rem;
@@ -76,5 +73,5 @@
         @include breakpoint($small-mobile) {
             padding: 2rem 1.5rem;
         }
-}
+    }
 }
