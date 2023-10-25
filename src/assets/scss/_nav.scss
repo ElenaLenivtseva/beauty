@@ -15,7 +15,6 @@
             text-align: center;
             font-size: 1.3rem;
         }
-        
     }
     &__link {
         &:hover {
@@ -32,12 +31,17 @@
         align-items: flex-start;
         background: $white;
         width: 20rem;
-        height: 100vh;
+        min-height: 100vh;
         padding: 2rem;
         border-radius: 0.8rem;
         -webkit-border-radius: 0.8rem;
         -moz-border-radius: 0.8rem;
         -ms-border-radius: 0.8rem;
         -o-border-radius: 0.8rem;
+        .nav__item {
+            &:not(:last-child) {
+                margin-right: 0;
+            } 
+        }
     }
 }
