@@ -45,8 +45,7 @@
             -moz-border-radius: 50%;
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
-        }
-        
+        }  
     }
     &__arrow_next {
         transform: scale(-1, 1);
@@ -54,15 +53,6 @@
         -moz-transform: scale(-1, 1);
         -ms-transform: scale(-1, 1);
         -o-transform: scale(-1, 1);
-    }
-    &__line {
-        width: 300rem;
-    }
-    &__slider {
-        display: flex;
-        width: 100vw;
-        overflow-x: hidden;
-        gap: 2.9rem;
     }
     &__item-img-wrap {
         height: 33.8rem;
@@ -72,11 +62,11 @@
         -ms-transition: 0.7s linear;
         -o-transition: 0.7s linear;
         @include breakpoint($bp1100) {
-            height: 25rem;
+            height: 37.1rem;
         }
     }
     &__item-img {
-        max-width: 100%;
+        width: 100%;
         object-fit: cover;
         height: 100%;
         border-radius: 0.8rem;
@@ -84,21 +74,21 @@
         -moz-border-radius: 0.8rem;
         -ms-border-radius: 0.8rem;
         -o-border-radius: 0.8rem;
+        @include breakpoint($tablet700) {
+            width: 100%;
+        }
     }
     &__item-btn {
         position: relative;
         @include breakpoint($tablet) {
-            width: 20rem;
+            // width: 20rem;
         }
         &:hover {
             cursor: pointer;
             .works__item-img-wrap {
                 height: 37.1rem;
                 margin-top: -1.7rem;
-                @include breakpoint($bp1100) {
-                    height: 28rem;
-                }
-            }
+}
             .works__item-img-wrap::after {
                 content: "";
                 position: absolute;
@@ -127,8 +117,9 @@
         -o-transition: 0.4s linear;
         color: $white;
         position: absolute;
-        top: 40%;
-        left: 40%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         font-size: 1.4rem;
         text-align: center;
     }
