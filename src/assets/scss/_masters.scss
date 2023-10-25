@@ -31,6 +31,12 @@
 }
 
 .item-master {
+    @include breakpoint($mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     &__button {
         height: 30rem;
         position: relative;
@@ -71,6 +77,7 @@
             align-items: center;
             text-align: center;
             height: 23rem;
+            width: fit-content;
         }
         @include breakpoint($small-mobile) {
             height: 18rem;

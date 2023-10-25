@@ -26,16 +26,4 @@ function bindMenu(triggerSelector, modalSelector, closeSelector, linkSelector) {
         modal.style.display = "none";
     }); 
 }
-// function moveToSection(triggerSelector, modalSelector, linkSelector) {
-//     const trigger = document.querySelectorAll(triggerSelector),
-//           modal = document.querySelector(modalSelector),
-//           menuList = modal.querySelectorAll(linkSelector);
-
-//     menuList.forEach(item => {
-//         item.addEventListener('click', (e) => {
-//             trigger[0].style.opacity = "1";
-//             modal.style.display = "none";
-//         });
-//     });
-
-// }
+bindMenu(".menu__img", ".nav_mobile", ".close", ".nav__item");

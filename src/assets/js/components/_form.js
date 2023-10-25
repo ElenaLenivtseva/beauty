@@ -7,16 +7,15 @@ function serializeForm(formNode) {
   
         return { name, value }
       })
-  
     console.log(data)
-  }
+}
   
   
   
   
   
   
-  function handleFormSubmit(event) {
+function handleFormSubmit(event) {
     event.preventDefault()
     serializeForm(applicantForm)
   }

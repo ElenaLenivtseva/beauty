@@ -1,12 +1,10 @@
-//= components/menu.js
-//= components/form.js
-//= components/tabs.js
-//= components/slider.js
-//= components/gallery.js
+import './components/_slider';
+import './components/_form';
+import './components/_gallery';
+import './components/_menu';
+import './components/_tabs';
 
 
-
-bindMenu(".menu__img", ".nav_mobile", ".close", ".nav__item");
 
 
 
