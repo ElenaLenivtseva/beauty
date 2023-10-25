@@ -2,6 +2,13 @@
     &__type {
         display: flex;
         margin-bottom: 4.7rem;
+        @include breakpoint($tablet800) {
+            flex-direction: column;
+            margin-bottom: 2.7rem;
+        }
+        @include breakpoint($small-mobile) {
+            align-items: center;
+        }
     }
     &__type-name {
         font-size: 1.4rem;
@@ -13,6 +20,9 @@
         -o-transition: 0.4s linear;
         &:not(:last-child) {
             margin-right: 2em;
+            @include breakpoint($tablet) {
+                margin-right: 1em;
+            }
         }
         &:hover {
             color: $green;
@@ -21,6 +31,15 @@
         &._active {
             color: $green;
             border-bottom: 2px solid $green;
+            @include breakpoint($tablet800) {
+                border-bottom: none;
+            }
+        }
+        @include breakpoint($tablet) {
+            font-size: 1.2rem;
+        }
+        @include breakpoint($tablet800) {
+            margin-bottom: 1rem;
         }
     }
     &__wrap {
@@ -28,14 +47,37 @@
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 12.6rem;
         grid-row-gap: 3.2rem;
+        @include breakpoint($tablet) {
+            grid-column-gap: 3.6rem;
+            grid-row-gap: 2.2rem;
+        }
+        @include breakpoint($small-mobile) {
+            grid-template-columns: 1fr;
+        }
     }
     &__item {
         display: flex;
         justify-content: space-between;
+        @include breakpoint($tablet) {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        @include breakpoint($small-mobile) {
+            justify-content: center;
+            align-items: center;
+        }
     }
     &__num {
         font-size: 2rem;
         font-weight: 600;
         color: $green;
+        @include breakpoint($mobile) {
+            margin-bottom: 1.2rem;
+        }
+    }
+    &__text {
+        @include breakpoint($tablet) {
+            margin-bottom: 1rem;
+        }
     }
 }
