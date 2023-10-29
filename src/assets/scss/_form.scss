@@ -1,6 +1,66 @@
 .form {
     display: flex;
     flex-direction: column;
+    
+    background: $white;
+    &__wrap {
+        display: none;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 4;
+    }
+    &_modal {
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+        width: 30vw;
+        padding: 5.4rem 3.6rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        border-radius: 0.8rem;
+        -webkit-border-radius: 0.8rem;
+        -moz-border-radius: 0.8rem;
+        -ms-border-radius: 0.8rem;
+        -o-border-radius: 0.8rem;
+    }
+    &__state {
+        display: none;
+        padding: 10%;
+        width: 30vw;
+        border: 1px solid $grey;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        z-index: 5;
+        background: $white;
+        &._active {
+            display: block;
+        }
+    }
+    &__success {
+        color: $green;
+    }
+    &__error {
+        color: $orange;
+    }
+    &__state-txt {
+        text-align: center;
+        color: inherit;
+        font-size: 1.6rem;
+    }
     &__title {
         font-size: 1.8rem;
         font-weight: 600;

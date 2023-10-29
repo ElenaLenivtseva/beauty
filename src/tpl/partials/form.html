@@ -1,0 +1,38 @@
+
+<div class="form__wrap" id="form__wrap">
+    <form action="#" class="form form_modal" id="common-form">
+        <img class="close close__form" src="./assets/img/default/close.png" alt="закрыть">
+        <p class="form__title">Быстрая запись</p>
+        <p class="form__subtitle">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.
+        </p> 
+        <input class="form__input form__name" type="text" name="name" id="name" placeholder="Ваше имя" required minlength="2"/>
+        <input class="form__input form__tel" type="tel" name="tel" id="tel" required/>
+        
+        <select class="form__input form__master" name="master" id="master">
+            <option value="unselect" selected>Выберите мастера</option>
+            <option value="master1">Мастер 1</option>
+            <option value="master2">Мастер 2</option>
+        </select>
+        <select class="form__input form__service" name="service" id="service">
+            <option value="unselect" selected>Выберите услугу</option>
+            <option value="services1">Услуга 1</option>
+            <option value="service2">Услуга 2</option>
+        </select>
+        <input class="form__input form__date" type="date" name="date" id="date" placeholder="Дат визита" min/>
+    
+        <button class="button" type="submit">Записаться</button>
+        <p class="form__privacy">
+            Нажимая на кнопку вы соглашаетесь с 
+            <a class="form__privacy-link" href="">обработкой персональных данных</a>
+        </p>
+    </form>
+    <div class="form__state form__loader">
+        <p class="form__state-txt">Ожидайте, идет отправка данных...</p>
+    </div>
+    <div class="form__state form__success">
+        <p class="form__state-txt">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер</p>
+    </div>
+    <div class="form__state form__error">
+        <p class="form__state-txt">Данные не отправлены, попробуйте еще раз</p>
+    </div>
+</div>

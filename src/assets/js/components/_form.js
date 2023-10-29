@@ -1,23 +1,54 @@
 function serializeForm(formNode) {
-    const { elements } = formNode
-    const data = Array.from(elements)
-      .filter((item) => !!item.name)
-      .map((element) => {
-        const { name, value } = element
-  
-        return { name, value }
-      })
-    console.log(data)
+  return new FormData(formNode)
 }
+async function sendData(data) {
+  // но я не знаю, туда ли отправляю( Не открывается localhost3001, swagger, соответственно, тоже
+  return await fetch('/server/controllers/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'multipart/form-data' },
+    body: data,
+  })
+}
+
+function toggleLoader() {
+  const loader = document.querySelector('form__loader')
+  loader.classList.toggle('_active')
+}
+function onSuccess() {
+  const success = document.querySelector('form__success')
+  success.classList.toggle('_active')  
+}
+function hideForm (formNode) {
+  let modalWrap = formNode.closest("#form__wrap")
+  modalWrap.style.display = "none"
+  document.body.style.overflowY = "visible"
+}
+function onError(error) {
+  const errorDiv = document.querySelector('form__success')
+  errorDiv.classList.toggle('_active')  
+  console.log(error.message)
+}  
   
   
-  
-  
-  
-  
-function handleFormSubmit(event) {
-    event.preventDefault()
-    serializeForm(applicantForm)
+async function handleFormSubmit(event) {
+  event.preventDefault()
+  const data = serializeForm(event.target)
+
+  toggleLoader()
+  const { status } = await sendData(data)
+  toggleLoader()
+
+  if (status === 200) {
+    onSuccess()
+    let timer = setTimeout(hideForm(event.target), 3000)
+  } else {
+    onError(error)
   }
-const applicantForm = document.getElementById('contact-form')
+}
+
+
+
+const applicantForm = document.getElementById('common-form')
 applicantForm.addEventListener('submit', handleFormSubmit)
+
+
