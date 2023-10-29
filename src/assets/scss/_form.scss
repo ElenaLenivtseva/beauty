@@ -30,6 +30,18 @@
         -moz-border-radius: 0.8rem;
         -ms-border-radius: 0.8rem;
         -o-border-radius: 0.8rem;
+        @include breakpoint($bp1100) {
+            width: 45vw;
+        }
+        @include breakpoint($tablet700) {
+            width: 60vw;
+        }
+        @include breakpoint($mobile) {
+            width: 80vw;
+        }
+        @include breakpoint($small-mobile) {
+            width: 100vw;
+        }
     }
     &__state {
         display: none;
@@ -49,6 +61,18 @@
         &._active {
             display: block;
         }
+        @include breakpoint($bp1100) {
+            width: 45vw;
+        }
+        @include breakpoint($tablet700) {
+            width: 60vw;
+        }
+        @include breakpoint($mobile) {
+            width: 80vw;
+        }
+        @include breakpoint($small-mobile) {
+            width: 100vw;
+        }
     }
     &__success {
         color: $green;
@@ -60,6 +84,9 @@
         text-align: center;
         color: inherit;
         font-size: 1.6rem;
+        @include breakpoint($tablet700) {
+            font-size: 1rem;
+        }
     }
     &__title {
         font-size: 1.8rem;

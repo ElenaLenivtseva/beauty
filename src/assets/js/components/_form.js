@@ -11,11 +11,11 @@ async function sendData(data) {
 }
 
 function toggleLoader() {
-  const loader = document.querySelector('form__loader')
+  const loader = document.querySelector('.form__loader')
   loader.classList.toggle('_active')
 }
 function onSuccess() {
-  const success = document.querySelector('form__success')
+  const success = document.querySelector('.form__success')
   success.classList.toggle('_active')  
 }
 function hideForm (formNode) {
@@ -23,10 +23,9 @@ function hideForm (formNode) {
   modalWrap.style.display = "none"
   document.body.style.overflowY = "visible"
 }
-function onError(error) {
-  const errorDiv = document.querySelector('form__success')
+function onError() {
+  const errorDiv = document.querySelector('.form__error')
   errorDiv.classList.toggle('_active')  
-  console.log(error.message)
 }  
   
   
@@ -41,8 +40,11 @@ async function handleFormSubmit(event) {
   if (status === 200) {
     onSuccess()
     let timer = setTimeout(hideForm(event.target), 3000)
+    onSuccess()
   } else {
-    onError(error)
+    onError()
+    let timer = setTimeout(hideForm(event.target), 3000)
+    onError()
   }
 }
 
