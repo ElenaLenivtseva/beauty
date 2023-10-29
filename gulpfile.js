@@ -14,8 +14,9 @@ const plumber = require("gulp-plumber");
 const panini = require("panini");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
-const notify = require("gulp-notify")
-const imagewebp = require("gulp-webp")
+const notify = require("gulp-notify");
+const imagewebp = require("gulp-webp");
+const webpackStream = require('webpack-stream');
 const browserSync = require("browser-sync").create();
 
 
@@ -102,17 +103,39 @@ function css() {
         .pipe(browserSync.reload({stream: true}));
 }
 
+// function js() {
+//     return src(path.src.js, {base: srcPath + "assets/js/"})
+//         .pipe(plumber({
+//             errorHandler : function(err) {
+//                 notify.onError({
+//                     title:    "JS Error",
+//                     message:  "Error: <%= error.message %>"
+//                 })(err);
+//                 this.emit('end');
+//             }
+//         }))
+//         .pipe(rigger())
+//         .pipe(dest(path.build.js))
+//         .pipe(uglify())
+//         .pipe(rename({
+//             suffix: ".min",
+//             extname: ".js"
+//         }))
+//         .pipe(dest(path.build.js))
+//         .pipe(browserSync.reload({stream: true}));
+// }
 function js() {
     return src(path.src.js, {base: srcPath + "assets/js/"})
-        .pipe(plumber({
-            errorHandler : function(err) {
-                notify.onError({
-                    title:    "JS Error",
-                    message:  "Error: <%= error.message %>"
-                })(err);
-                this.emit('end');
-            }
-        }))
+        // .pipe(plumber({
+        //     errorHandler : function(err) {
+        //         notify.onError({
+        //             title:    "JS Error",
+        //             message:  "Error: <%= error.message %>"
+        //         })(err);
+        //         this.emit('end');
+        //     }
+        // }))
+        .pipe(webpackStream(require('./webpack.config')))
         .pipe(rigger())
         .pipe(dest(path.build.js))
         .pipe(uglify())

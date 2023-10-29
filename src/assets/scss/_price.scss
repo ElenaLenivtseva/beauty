@@ -28,7 +28,7 @@
             color: $green;
             cursor: pointer;
         }
-        &._active {
+        &-active {
             color: $green;
             border-bottom: 2px solid $green;
             @include breakpoint($tablet800) {
@@ -43,16 +43,34 @@
         }
     }
     &__wrap {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 12.6rem;
-        grid-row-gap: 3.2rem;
-        @include breakpoint($tablet) {
-            grid-column-gap: 3.6rem;
-            grid-row-gap: 2.2rem;
+        display: none;
+        &-active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 12.6rem;
+            grid-row-gap: 3.2rem;
+            @include breakpoint($tablet) {
+                grid-column-gap: 3.6rem;
+                grid-row-gap: 2.2rem;
+            }
+            @include breakpoint($small-mobile) {
+                grid-template-columns: 1fr;
+            }
         }
-        @include breakpoint($small-mobile) {
-            grid-template-columns: 1fr;
+        &-cosmetology {
+            background: #e28d8d;
+        }
+        &-manicure {
+            background: #77b155;
+        }
+        &-makeup {
+            background: #55a3b1;
+        }
+        &-lashes {
+            background: #b15595;
+        }
+        &-massage {
+            background: #b1ab55;
         }
     }
     &__item {
